@@ -29,9 +29,9 @@ ii)[Twilio Messaging Service](#integration-of-dialogflow-with-twilio-messaging-s
 
 iii)[Big Query on the Google Cloud Platform](#integration-of-dialogflow-with-bigquery)
 
-iv)[Google Vision API]
+iv)[Google Vision API](#integration-of-dialogflow-with-google-vision-api)
 
-A brief description of these integrations is explained in the following sections. To experiment with the UI, I designed a simple [front-end] for the agent using Django framework. I also designed a [Figma protoype](#neomoprohic-ux-prototype) of the UI for mobile applications using the minimal neomorphism design. 
+A brief description of these integrations is explained in the following sections. To experiment with the UI, I designed a simple [front-end](#django-front-end-for-the-agent) for the agent using Django framework. I also designed a [Figma protoype](#neomoprohic-ux-prototype) of the UI for mobile applications using the minimal neomorphism design. 
 
 ## High-Level Architecture of the Application
 This section depicts the application from an architectural stand-point and demonstrates its functional components. The chat application is hosted on Google App Engine. The front-end for the application is built in Python using Django framework, which is a free and opensource web framework. The App Engine interacts with CloudSQL for any database requests. When the users upload any files, they are saved to Google Cloud Storage and the application interacts with the Dialogflow agent through the Dialogflow API. The agent's functionality is futher enchanced by integrating it with Google Calendar, Telephony Gateway, Twilio Messaging Service, and BigQuery.
