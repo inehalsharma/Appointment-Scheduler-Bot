@@ -1,6 +1,6 @@
 # Appointment Scheduler Bot for Happy Hearts Cardiovascular Clinic
 
-![Test Image 1](logo.png)
+![Test Image 1](Images/logo.png)
 
 ## Introduction
 For human beings, conversation is natural since it is a part of our everyday lives. We fundamentally understand it and all the nuances around it. This is why trying to teach a machine to have a conversation is very difficult. People tend to ask for information in various different ways, which makes the entire process even more complicated. For example, to ask Google Assistant or Alexa about the weather outside, I could use the following phrases:
@@ -35,14 +35,14 @@ A brief description of these integrations is explained in the following sections
 
 ## High-Level Architecture of the Application
 This section depicts the application from an architectural stand-point and demonstrates its functional components. The chat application is hosted on Google App Engine. The front end for the application is built in Python using Django framework. The App Engine interacts with CloudSQL for any database requests. When the users upload any files, we save them to Google Cloud Storage and the application with interact with our Dialogflow agent through the Dialogflow API. The agent is futher enchanced by integrating it with Google Calendar, Telephony Gateway, Twilio Messaging Service, and BigQuery.
-![Test-Image0](workflow.png)
+![Test-Image0](Images/workflow.png)
 (Source: Google Documentation)
 
 ### Integration of Dialogflow with Google Calendar
 
 A chatbot needs to connect to a back end for transferring information to and fro from the business logic. In Dialogflow, we make this connection using a fulfillment. A fulfillment is a piece of code that is deployed as a webhook and lets the Dialogflow agent call the business logic on a per-intent basis. During a conversation, this allows you to use the information extracted from Dialogflow's natural language processing to generate a dynamic response or to trigger an action on the back end. 
 In this section, I learnt how Dialogflow connects with back end systems to provide rich and dynamic responses to user questions. I enhanced the conversation agent by creating a fulfillment. I enabled the Google Calendar API for the Google Cloud Platform(GCP) project and used those API credentials to connect my fulfillment cloud function with Google calendar. Finally, I tested my agent by creating appointment requests in Google Calender. The figure below demonstrates the workflow for the Google Calender functionality.
-![Test-Image2](test-image2.png)
+![Test-Image2](Images/test-image2.png)
 
 ### Integration of Dialogflow with Telephony Gateway
 
@@ -55,15 +55,15 @@ Programmable SMS service from Twilio makes sending and receiving SMS easily. In 
 ### Integration of Dialogflow with BigQuery
 
 In this section, I enhanced the agent by creating an integration with BigQuery. I created a dataset and a table in BigQuery on GCP and connected it to my fulfillment. Using the fulfillment, I can send the appoinment data to BigQuery dataset, store it, and visualize it to draw useful insights.I tested the agent to ensure that the appointment data is being send to BigQuery. I also explored the data in Data Studio using the one-click Explore feature in BigQuery. The figure below demonstrates the workflow for the BigQuery functionality.
-![Test-Image3](test-image3.png)
+![Test-Image3](Images/test-image3.png)
 
 ### Django Front End for the Agent
 In this section, I created an App Engine front end for the Dialogflow agent. The front-end has a text input and a submit button to send chat messages. All the messages back and forth are visible on the chat window. The chat app is served on App Engine and the front end is built in Python using the Django framework.The App Engine interacts with CloudSQL for any database requests and it interacts with the Dialogflow agent via the Dialogflow API. the figurs below show the front end for the agent and the workflow for the application.
-![Test-Image4](chatapp.png)
+![Test-Image4](Images/chatapp.png)
 
 ### Integration of Dialogflow with Google Vision API
 In this section, I further enchanced the agent by integrating it with Google Cloud Vision API. The main motivation behind this integration is to enable the user to upload an image to the chat application and expect a response that guides them further in the conversation. I updated the Django front end from the previous step and added an image upload functionality for uploading clinic invoices. The image is displayed on the front end and returns back the text detected in the image by processing it through the Vision API. The figure below shows the updated front end.
-![Test-Image5](visionapi.png)
+![Test-Image5](Images/visionapi.png)
 
 ### Demo of the Agent:
 
@@ -78,17 +78,17 @@ In this section, I further enchanced the agent by integrating it with Google Clo
 
 #### Dialogflow Tester Window Based View: 
 
-![Alt Text](Img1.gif)
+![Alt Text](Images/Img1.gif)
 
 #### Appointments Booked on the Google Calender:  
 
-![Alt Text](CalView.png)
+![Alt Text](Images/CalView.png)
 
 ### Neomoprohic UX Prototype
 
 Protoyped the UI of the agent using neumorphic design in Figma.A few screens of the prototype are given below:
 
-![Alt Text](UI.png)
+![Alt Text](Images/UI.png)
 
 The working prototype can be viewed at the following link: (Click on the mic icon at the bottom of the screen to navigate to the next screen)
 
