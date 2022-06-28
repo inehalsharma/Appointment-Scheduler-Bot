@@ -35,7 +35,7 @@ A brief description of these integrations is explained in the following sections
 
 ## High-Level Architecture of the Application
 This section depicts the application from an architectural stand-point and demonstrates its functional components. The chat application is hosted on Google App Engine. The front end for the application is built in Python using Django framework. The App Engine interacts with CloudSQL for any database requests. When the users upload any files, we save them to Google Cloud Storage and the application with interact with our Dialogflow agent through the Dialogflow API. The agent is futher enchanced by integrating it with Google Calendar, Telephony Gateway, Twilio Messaging Service, and BigQuery.
-![Test-Image0](Images/workflow.png)
+![Test-Image0](Images/architecture.png)
 (Source: Google Documentation)
 
 ### Integration of Dialogflow with Google Calendar
